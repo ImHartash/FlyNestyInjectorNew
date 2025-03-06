@@ -2,6 +2,10 @@
 #include <Windows.h>
 #include <TlHelp32.h>
 #include <string>
+#include <functional>
+#include <dwmapi.h>
+#include <random>
+#include <thread>
 #include "../Dependencies/streamio/streamio.hpp"
 #include "../Classes/DataModel/dmgetter.hpp"
 #include "../Reverse/memory/memory.hpp"

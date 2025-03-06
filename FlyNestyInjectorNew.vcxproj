@@ -122,6 +122,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,6 +148,55 @@
     <ClInclude Include="Classes\DataModel\dmgetter.hpp" />
     <ClInclude Include="Classes\InstanceModel\instance.hpp" />
     <ClInclude Include="Classes\RBX\offsets.hpp" />
+    <ClInclude Include="Dependencies\cpr\accept_encoding.h" />
+    <ClInclude Include="Dependencies\cpr\api.h" />
+    <ClInclude Include="Dependencies\cpr\async.h" />
+    <ClInclude Include="Dependencies\cpr\async_wrapper.h" />
+    <ClInclude Include="Dependencies\cpr\auth.h" />
+    <ClInclude Include="Dependencies\cpr\bearer.h" />
+    <ClInclude Include="Dependencies\cpr\body.h" />
+    <ClInclude Include="Dependencies\cpr\buffer.h" />
+    <ClInclude Include="Dependencies\cpr\callback.h" />
+    <ClInclude Include="Dependencies\cpr\cert_info.h" />
+    <ClInclude Include="Dependencies\cpr\connect_timeout.h" />
+    <ClInclude Include="Dependencies\cpr\cookies.h" />
+    <ClInclude Include="Dependencies\cpr\cpr.h" />
+    <ClInclude Include="Dependencies\cpr\cprtypes.h" />
+    <ClInclude Include="Dependencies\cpr\curlholder.h" />
+    <ClInclude Include="Dependencies\cpr\curlmultiholder.h" />
+    <ClInclude Include="Dependencies\cpr\curl_container.h" />
+    <ClInclude Include="Dependencies\cpr\error.h" />
+    <ClInclude Include="Dependencies\cpr\file.h" />
+    <ClInclude Include="Dependencies\cpr\filesystem.h" />
+    <ClInclude Include="Dependencies\cpr\http_version.h" />
+    <ClInclude Include="Dependencies\cpr\interceptor.h" />
+    <ClInclude Include="Dependencies\cpr\interface.h" />
+    <ClInclude Include="Dependencies\cpr\limit_rate.h" />
+    <ClInclude Include="Dependencies\cpr\local_port.h" />
+    <ClInclude Include="Dependencies\cpr\local_port_range.h" />
+    <ClInclude Include="Dependencies\cpr\low_speed.h" />
+    <ClInclude Include="Dependencies\cpr\multipart.h" />
+    <ClInclude Include="Dependencies\cpr\multiperform.h" />
+    <ClInclude Include="Dependencies\cpr\parameters.h" />
+    <ClInclude Include="Dependencies\cpr\payload.h" />
+    <ClInclude Include="Dependencies\cpr\proxies.h" />
+    <ClInclude Include="Dependencies\cpr\proxyauth.h" />
+    <ClInclude Include="Dependencies\cpr\range.h" />
+    <ClInclude Include="Dependencies\cpr\redirect.h" />
+    <ClInclude Include="Dependencies\cpr\reserve_size.h" />
+    <ClInclude Include="Dependencies\cpr\resolve.h" />
+    <ClInclude Include="Dependencies\cpr\response.h" />
+    <ClInclude Include="Dependencies\cpr\session.h" />
+    <ClInclude Include="Dependencies\cpr\singleton.h" />
+    <ClInclude Include="Dependencies\cpr\ssl_ctx.h" />
+    <ClInclude Include="Dependencies\cpr\ssl_options.h" />
+    <ClInclude Include="Dependencies\cpr\status_codes.h" />
+    <ClInclude Include="Dependencies\cpr\threadpool.h" />
+    <ClInclude Include="Dependencies\cpr\timeout.h" />
+    <ClInclude Include="Dependencies\cpr\unix_socket.h" />
+    <ClInclude Include="Dependencies\cpr\user_agent.h" />
+    <ClInclude Include="Dependencies\cpr\util.h" />
+    <ClInclude Include="Dependencies\cpr\verbose.h" />
     <ClInclude Include="Dependencies\json\httplib.h" />
     <ClInclude Include="Dependencies\json\nlohmann\json.hpp" />
     <ClInclude Include="Dependencies\json\nlohmann\json_fwd.hpp" />
@@ -231,6 +281,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="luacontent.hpp" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Reverse\memory\memory.hpp" />
     <ClInclude Include="Reverse\memory\WinAPI.hpp" />
     <ClInclude Include="Storage\storage.hpp" />
@@ -297,6 +348,7 @@
     <ClCompile Include="Dependencies\zstd\legacy\zstd_v07.c" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DLL\Injector.cpp" />
+    <ClCompile Include="DLL\Server.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -314,9 +366,13 @@
     <None Include="Dependencies\zstd\Makefile" />
     <None Include="Dependencies\zstd\module.modulemap" />
     <None Include="Dependencies\zstd\README.md" />
+    <None Include="init.lua" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\zstd.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FlyNestyInjectorNew.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

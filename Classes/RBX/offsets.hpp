@@ -12,6 +12,7 @@ namespace offsets {
     }
 
     namespace datamodel {
+        constexpr uint64_t fakedatamodel = 0x5e60a48;
         constexpr uint64_t ptrtodatamodel = 0x1a8;
         constexpr uint64_t placeid = 0x170;
         constexpr uint64_t gameloaded = 0x3B1;
@@ -21,7 +22,7 @@ namespace offsets {
         constexpr uint64_t engine = 0x10;
         constexpr uint64_t viewmatrix = 0x4C0;
         constexpr uint64_t dimensions = 0x730;
-        constexpr uint64_t visual_pointer = 0x59F2F80;
+        constexpr uint64_t visual_pointer = 0x5CDCCD8;
         constexpr uint64_t dmptr = 0x720;
     };
 
